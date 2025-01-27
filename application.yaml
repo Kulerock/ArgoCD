@@ -8,6 +8,7 @@ spec:
   source:
     repoURL: oci://361769585400.dkr.ecr.eu-north-1.amazonaws.com/nginx-helmchart
     targetRevision: 0.1.1
+    chart: nginx-helmchart
     helm:
       parameters:
       - name: image.repository
@@ -21,7 +22,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
-   
-
-
