@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: oci://361769585400.dkr.ecr.eu-north-1.amazonaws.com/nginx-helmchart
+    repoURL: oci://361769585400.dkr.ecr.eu-north-1.amazonaws.com/
     targetRevision: 0.1.1
     chart: nginx-helmchart
     helm:
