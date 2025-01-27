@@ -11,6 +11,8 @@ spec:
     chart: nginx-helmchart
     helm:
       parameters:
+      - name: imagePullSecrets[0].name
+        value: ecr-creds
       - name: image.repository
         value: 361769585400.dkr.ecr.eu-north-1.amazonaws.com/nginx-dockerfiles
       - name: image.tag
