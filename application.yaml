@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-helmchart
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: oci://361769585400.dkr.ecr.eu-north-1.amazonaws.com/nginx-helmchart
+    targetRevision: 0.1.1
+    helm:
+      parameters:
+      - name: image.repository
+        value: 361769585400.dkr.ecr.eu-north-1.amazonaws.com/nginx-dockerfiles
+      - name: image.tag
+        value: 54219319430dce42aa8626ea42279a513383fb30
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+   
+
+
